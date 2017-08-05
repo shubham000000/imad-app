@@ -29,9 +29,8 @@ function createTemplate(data){
     var heading= data.heading;
     var content= data.content;
 }
-var htmlTemplate =
-
-`<html>
+var htmlTemplate=`
+<html>
     <head>
         <title> 
         $title{}  
@@ -50,10 +49,10 @@ var htmlTemplate =
          $heading{}
         </h3>
         <div>
-           $date[{}
+            $date{}
         </div>
         <div>
-           $content{}
+            $content{}
         </div>
         </div>
      </body>
@@ -61,9 +60,6 @@ var htmlTemplate =
 `;
 return htmlTemplate;
 }
-
-
-
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
