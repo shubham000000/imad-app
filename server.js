@@ -30,6 +30,7 @@ function createTemplate(data){
     var content= data.content;
 }
 var htmlTemplate =
+
 `<html>
     <head>
         <title> 
@@ -56,8 +57,8 @@ var htmlTemplate =
         </div>
         </div>
      </body>
-</html>`
-;
+</html>
+`;
 return htmlTemplate;
 }
 
