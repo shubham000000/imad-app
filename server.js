@@ -10,7 +10,7 @@ var articleone ={
   heading: 'Article-one',
   date: 'Aug 5, 2016',
   content:
-  `<p>
+            `<p>
                 This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.
             </p>
             <p>
@@ -24,16 +24,15 @@ var articleone ={
             </p>`
 };
 function createTemplate(data){
-    var title= data.title;
-    var date= data.date;
-    var heading= data.heading;
-    var content= data.content;
-}
-var htmlTemplate=`
+    var title = data.title;
+    var heading = data.heading;
+    var date = data.date;
+    var content = data.content;
+var htmlTemplate = `
 <html>
     <head>
         <title> 
-        $title{}  
+        ${title}  
         </title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link href="/ui/style.css" rel="stylesheet" />
@@ -46,13 +45,13 @@ var htmlTemplate=`
         </div>
         <hr/>
         <h3>
-         $heading{}
+         ${heading}
         </h3>
         <div>
-            $date{}
+            ${date}
         </div>
         <div>
-            $content{}
+           ${content}
         </div>
         </div>
      </body>
@@ -61,7 +60,7 @@ var htmlTemplate=`
 return htmlTemplate;
 }
 app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+  res.send(createTemplate(articleone));
 });
 
 app.get('/article-one',function(req,res){
