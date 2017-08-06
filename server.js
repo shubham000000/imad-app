@@ -5,8 +5,9 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articles ={
-  var articleOne :{  title: 'Article_one:Shubham Borghare',
+var articles = {
+   'article-one': {  
+  title: 'Article_one:Shubham Borghare',
   heading: 'Article-one',
   date: 'Aug 5, 2016',
   content:
@@ -21,8 +22,10 @@ var articles ={
             </p>
             <p>
                 This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.
-            </p>`},
-var articleTwo :{  title: 'Article_Two:Shubham Borghare',
+            </p>`
+      
+  },
+  'article-two' :{  title: 'Article_Two:Shubham Borghare',
   heading: 'Article-Two',
   date: 'Aug 10, 2016',
   content:
@@ -30,7 +33,7 @@ var articleTwo :{  title: 'Article_Two:Shubham Borghare',
                 This is the content for my second artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.
             </p>
            `},
-var articleThree :{  title: 'Article_Three:Shubham Borghare',
+  'article-three' :{  title: 'Article_Three:Shubham Borghare',
   heading: 'Article-Three',
   date: 'Aug 15, 2016',
   content:
@@ -84,17 +87,11 @@ app.get('/', function (req, res) {
   res.send(createTemplate(articleOne));
 });
 
-app.get('/article-one',function(req,res){
-   res.send(createTemplate(articleone));
+app.get('/:articleName',function(req,res){
+    var articleName= req.params.articleName;
+   res.send(createTemplate(articles[articleName]));
 });
 
-app.get('/article-two',function(req,res){
-    res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
-});
-
-app.get('/article-three',function(req,res){
-    res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
-});
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
