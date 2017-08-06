@@ -5,8 +5,8 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articleone ={
-  title: 'Article_one:Shubham Borghare',
+var articles ={
+  var articleOne :{  title: 'Article_one:Shubham Borghare',
   heading: 'Article-one',
   date: 'Aug 5, 2016',
   content:
@@ -21,8 +21,29 @@ var articleone ={
             </p>
             <p>
                 This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.
-            </p>`
+            </p>`},
+var articleTwo :{  title: 'Article_Two:Shubham Borghare',
+  heading: 'Article-Two',
+  date: 'Aug 10, 2016',
+  content:
+            `<p>
+                This is the content for my second artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.
+            </p>
+           `},
+var articleThree :{  title: 'Article_Three:Shubham Borghare',
+  heading: 'Article-Three',
+  date: 'Aug 15, 2016',
+  content:
+            `<p>
+                This is the content for my third artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.
+            </p>
+            <p>
+                This is the content for my third artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.This is the content for my first artcle.
+            </p>
+            `}
+
 };
+
 function createTemplate(data){
     var title = data.title;
     var heading = data.heading;
@@ -60,7 +81,7 @@ var htmlTemplate = `
 return htmlTemplate;
 }
 app.get('/', function (req, res) {
-  res.send(createTemplate(articleone));
+  res.send(createTemplate(articleOne));
 });
 
 app.get('/article-one',function(req,res){
