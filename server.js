@@ -121,7 +121,14 @@ app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
 
-app.get
+var names =[];
+app.get('/submit-name/:name', function(req, res){
+   var name = req.params.name;
+   
+   names.push('name');
+   
+   res.send(JSON.stringify(names));
+});
 
 var port = 80;
 app.listen(port, function () {
