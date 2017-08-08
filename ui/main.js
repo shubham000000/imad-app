@@ -1,10 +1,10 @@
 var button = document.getElementById('counter');
 
-button.onclick = function(){
+button.onclick = function () {
      
      var request = new XMLHttpRequest();
      
-     request.onreadystatechange = function(){
+     request.onreadystatechange = function () {
         if(request.readyState === XMLHttpRequest.ONE)  {
             
             if(request.status === 200){
@@ -24,8 +24,8 @@ var name = nameInput.value;
 var submit = document.getElementById('submit_btn');
 submit.onclick =function(){
     var names= ['name1','name2','name3','name4'];
-    var list = ' ';
-    for (var i=0; i<names.lenght;i++){
+    var list = ''; 
+    for (var i= 0; i < names.lenght; i++){
         list+= '<li>' + names[i] + '</li>';
     }
     
