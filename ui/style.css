@@ -10,7 +10,6 @@ body {
 
 .text-big {
     font-size: 300%;
-    
 }
 
 .bold {
@@ -24,7 +23,7 @@ body {
 .container{
      max-width: 800px;
      margin: 0 auto;
-     color:black;
+     color: #794a4a;
      font-family: sans-serif;
   
      padding-left: 20px;
