@@ -96,11 +96,15 @@ app.post('/login', function(req,res){
                res.send(403).send('username/password is invalid');
            }else{
                 var dbString = result.rows[0].password;
-                dbString.split('$').
-                res.send('User succesfully created:' + username);
+                var salt = dbString.split('$')[2];
+                var hashedPasssword = hash(password, salt);
+                if(hashedPassword === dbString){
+                    res.send('credential correct!');
+                }else{
+                    res.send(403).send('username/password is invalid');
+                }
            }
-          
-       }
+     }
    });
 });
 
