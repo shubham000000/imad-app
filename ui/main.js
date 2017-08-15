@@ -23,5 +23,5 @@ var submit = document.getElementById('submit_btn');
      console.log(password);
      request.open('POST', 'http://borgharesb.imad.hasura-app.io/login', true);
      request.setRequestHeader('Content-Type', 'application/json');
-     request.send(JSON.stringify({username: username, password: password}));
+     request.send(json.stringify({username: username, password: password}));
 };
